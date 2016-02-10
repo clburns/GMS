@@ -1,0 +1,9 @@
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col card">
+    Registration<br/>
+
+    <input ng-model="user.username" placeholder="Username"/><br/>
+    <input ng-model="user.password" placeholder="Password"/><br/>
+    <input app-enter="register(user)" ng-model="user.password2" placeholder="Password2"/><br/>
+    <button ng-click="register(user)">Register</button>
+</div>
+

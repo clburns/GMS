@@ -1,0 +1,18 @@
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col card">
+    <ul class="forum-item" dir-paginate="post in posts | orderBy: 'createdDate' | itemsPerPage: 10" current-page="currentPage">
+        <li>
+            <span>
+                <a ng-href="">{{post.createdBy.local.username}}</a>
+            </span>
+            <span class="created-date fg-light">{{post.createdDate | date}}</span>
+            <div>{{post.content.message}}</div>
+        </li>
+    </ul>
+
+    <dir-pagination-controls
+            max-size="5"
+            direction-links="true"
+            boundary-links="true" class="pagination">
+    </dir-pagination-controls>
+</div>
+<div data-new-post></div>

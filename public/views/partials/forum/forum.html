@@ -1,0 +1,40 @@
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col card">
+    <div class="forum-header">
+        <form class="forum-ctrl">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                    <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="search" ng-model="search" />
+                    <label class="mdl-textfield__label" for="search">Expandable Input</label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="forum-message-list">
+        <ul class="forum-item" dir-paginate="thread in threads | filter:search | orderBy: 'createdDate':true | itemsPerPage: 10">
+            <li>
+            <span>
+                <a ng-href="/forum/{{parentUrl}}/{{thread.urlName}}">{{thread.title}}</a>
+                <span class="created-date fg-light">{{thread.createdDate | date}}</span>
+            </span>
+
+                <div class="fg-light">Created by:
+                    <a ng-href="">{{thread.createdBy.local.username}}</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <dir-pagination-controls
+        max-size="5"
+        direction-links="true"
+        boundary-links="true" class="pagination">
+    </dir-pagination-controls>
+</div>
+
+
+<div>{{myAlert}}</div>
+<div data-new-thread></div>

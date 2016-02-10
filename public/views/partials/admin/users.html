@@ -1,0 +1,28 @@
+<!--<div class="mdl-color&#45;&#45;white mdl-shadow&#45;&#45;2dp mdl-cell mdl-cell&#45;&#45;12-col card">-->
+    <!--<table>-->
+        <!--<tr ng-repeat="user in users">-->
+            <!--<td>{{user.local.username}}</td>-->
+        <!--</tr>-->
+    <!--</table>-->
+<!--</div>-->
+
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+        <tr>
+            <th class="mdl-data-table__cell--non-numeric">Username</th>
+            <th>Role</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users">
+            <td class="mdl-data-table__cell--non-numeric">{{user.local.username}}</td>
+            <td>{{user.local.roles}}}</td>
+            <td>
+                <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="deleteUser(user._id)">
+                    <i class="material-icons">clear</i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

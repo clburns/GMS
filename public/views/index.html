@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/libraries/material.min.css" />
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="/styles/css/app.css"/>
+    <base href="/">
+</head>
+<body>
+    <div class="mdl-layout__container">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <a class="parent-title" ng-href="/{{parentUrl}}">
+                        <span class="mdl-layout-title" ng-bind="parentTitle">parentTitle</span>
+                    </a>
+                    <span class="mdl-layout-title" ng-bind="title">Title</span>
+                    <div class="mdl-layout-spacer"></div>
+                    <nav class="mdl-navigation" data-nav></nav>
+                </div>
+                <div class="mdl-layout__tab-bar" ng-if="showAdminNav" style="height: 48px;">
+                    <div ng-init="selectedTab = 'admin'" ng-include="'/views/partials/admin/adminnavbar.html'"></div>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Guild Name Here</span>
+                <nav class="mdl-navigation" data-nav></nav>
+            </div>
+            <main class="mdl-layout__content mdl-color--grey-100">
+                <div class="mdl-grid content" ng-view></div>
+            </main>
+        </div>
+    </div>
+
+
+    <script src="/libraries/angular.js"></script>
+    <script src="/libraries/angular-route.js"></script>
+    <script src="/libraries/marked.js"></script>
+    <script src="/libraries/dirPagination.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/services/accountServ.js"></script>
+    <script src="/js/services/forumServ.js"></script>
+    <script src="/js/directives/nav.js"></script>
+    <script src="/js/directives/helpers.js"></script>
+    <script src="/js/directives/newContent.js"></script>
+    <script src="/js/controllers/accountCtrl.js"></script>
+    <script src="/js/controllers/adminCtrl.js"></script>
+    <script src="/js/controllers/forumCtrl.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<form class="mdl-color--white mdl-shadow--6dp mdl-cell mdl-cell--12-col card-input card" ng-show="showinput" ng-submit="submitThread(thread)">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="title" ng-model="thread.title" required/>
+        <label class="mdl-textfield__label" for="title">Thread Title</label>
+    </div></br>
+    <div class="mdl-textfield mdl-js-textfield">
+        <textarea class="mdl-textfield__input" type="text" rows= "5" id="post" ng-model="thread.message" required></textarea>
+        <label class="mdl-textfield__label" for="post">Your Message...</label>
+    </div></br>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Submit</button>
+</form>
+
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-button--colored fab" ng-hide="showinput" ng-click="showinput=true">
+    <i class="material-icons">add</i>
+</button>
+<button class="mdl-button mdl-js-button mdl-shadow--6dp mdl-button--fab mdl-button--colored fab" ng-show="showinput" ng-click="showinput=false">
+    <i class="material-icons">clear</i>
+</button>
+

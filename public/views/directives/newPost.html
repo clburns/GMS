@@ -1,0 +1,14 @@
+<form class="mdl-color--white mdl-shadow--6dp mdl-cell mdl-cell--12-col card-input card" ng-show="showinput" ng-submit="submitPost(post)">
+    <div class="mdl-textfield mdl-js-textfield">
+        <textarea class="mdl-textfield__input" type="text" rows= "5" id="post" app-enter="submitPost(post)" ng-model="post.message" required></textarea>
+        <label class="mdl-textfield__label" for="post">Your Message...</label>
+    </div></br>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Submit</button>
+</form>
+
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-button--colored fab" ng-hide="showinput" ng-click="showinput=true">
+    <i class="material-icons">create</i>
+</button>
+<button class="mdl-button mdl-js-button mdl-shadow--6dp mdl-button--fab mdl-button--colored fab" ng-show="showinput" ng-click="showinput=false">
+    <i class="material-icons">clear</i>
+</button>

@@ -1,0 +1,10 @@
+<a class="mdl-navigation__link" menu-close ng-href="/">Home</a>
+
+<a class="mdl-navigation__link" menu-close ng-show="!currentUser" ng-href="/login">Login</a>
+<a class="mdl-navigation__link" menu-close ng-show="!currentUser" ng-href="/registration">Registration</a>
+
+<a class="mdl-navigation__link" menu-close ng-show="currentUser" ng-href="/forum">Forum</a>
+<a class="mdl-navigation__link" menu-close ng-show="currentUser" ng-href="/profile">Profile</a>
+<a class="mdl-navigation__link" menu-close ng-show="currentUser.local.roles.indexOf('admin') > -1" ng-href="/admin">Admin</a>
+<a class="mdl-navigation__link" menu-close ng-show="currentUser" ng-href="/logout" ng-click="logout()">Logout</a>
+

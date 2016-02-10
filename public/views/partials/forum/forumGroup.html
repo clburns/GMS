@@ -1,0 +1,8 @@
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col card">
+    <ul class="forum-item" ng-repeat="forum in forums | orderBy: 'displayOrder' ">
+        <li>
+            <a ng-href="/forum/{{forum.urlName}}">{{forum.title}}</a>
+            <div>{{forum.description}}</div>
+        </li>
+    </ul>
+</div>
